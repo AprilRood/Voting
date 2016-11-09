@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="ElectionApp">
+	<head>
+		<meta charset="utf-8">
+		<title>Voting App</title>
+		<script src="c:/node_modules/angular/angular.js" charset="utf-8"></script>
+		<script src="main.js" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<h1>Voting Application</h1>
+		<h3>List of candidates:</h3>
+		<div ng-controller="MainController">
+			<ul>
+				<li ng-repeat="candidate in candidates">
+					{{candidate.name}} {{candidate.votes}}
+					<input type="submit" value="Vote" ng-click="addVote(candidate)"/>
+				</li>
+			</ul>
+			<form>
+				Name: <input type="text" ng-model="newCandidate.name">
+				<input type="submit" value="Add Candidate" ng-click="addCandidate()">
+			</form>
+		</div>
+	</body>
+</html>
